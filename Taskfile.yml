@@ -1,0 +1,18 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - go build -o bin/xlsxpict{{exeExt}} main.go
+  clean:
+    cmds:
+      - cmd /c "del /F /Q bin\xlsxpict{{exeExt}}"
+  fmt:
+    cmds:
+      - goimports -w main.go
+  vet:
+    cmds:
+      - go vet main.go
+
